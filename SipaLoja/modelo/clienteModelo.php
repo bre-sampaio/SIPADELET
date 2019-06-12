@@ -48,7 +48,13 @@
         
      /* DELETAR CLIENTE */   
         function deletarCliente(){
+            $sql = "DELETE FROM cliente WHERE idcliente = $id";
+            $resul = mysqli_query($cnx = conn(), $sql);
             
+            if(!$resul){
+                die('Erro ao deletar cliente' . mysqli_error($cnx));
+            }
+            return 'Cliente deletado com secesso';
         }
 
 

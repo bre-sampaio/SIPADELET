@@ -59,12 +59,21 @@ function adicionar(){
 		exibir("cliente/listar", $dados);
 
 	}
-
+        
+        /* VER O CLIENTE */
+        
         function ver($id){
             $dados["cliente"] = pegarClientePorId($id);
             exibir("cliente/visualizar", $dados);
         }
 
+        
+        /* DELETAR CLIENTE */
+        
+        function deletar($id){
+            $msg = deletarCliente($id);
+            redirecionar("cliente/listar");
+        }
 
 
 
